@@ -1,0 +1,29 @@
+<ion-view view-title="Muat Naik">
+    <ion-content class="padding">
+
+      <div class="list list-inset">
+          <label class="item item-input">
+              <input type="text" placeholder="Nama Barang" ng-model="data.NamaBarang">
+          </label>
+          <label class="item item-input">
+              <input type="text" placeholder="(RM)" ng-model="data.Harga">
+          </label>
+          <label class="item item-input">
+              <input type="file" placeholder="Gambar" ng-model="data.Gambar">
+          </label>
+          <div class="list">
+
+          <label class="item item-input item-select">
+          <div class="input-label">Kategori</div>
+          <select>
+              <option>Peralatan Rumah</option>
+              <option selected>Peralatan Memasak</option>
+          </select>
+          </label>
+
+          </div>
+      </div>
+      <button class="button button-block button-calm" ng-click="MuatNaik()">Muat Naik</button>
+
+  </ion-content>
+</ion-view>
