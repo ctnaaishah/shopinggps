@@ -1,28 +1,20 @@
 (function() {
     angular
         .module("ShoppingGPS.MuatNaik", [])
-        .factory('MuatNaikFactory', MuatNaikFactory)
-
-        // .controller('MuatNaikCtrl', MuatNaikCtrl)
+        .controller('MuatNaikCtrl', MuatNaikCtrl)
 
         // =============================
 
+    function MuatNaikCtrl(Database) {
+        var barang = this;
+        barang.data = {};
+        barang.upload = upload;
 
-    function MuatNaikFactory($resource) {
-        
-        /*
-            $resource akan menyediakan metod-metod berikut:
-            .get()  = GET dengan respon {}
-            .put()  = PUT dengan respon {}
-            .save() = POST dengan respon {}
-            .query()= GET dengan respon []
-            .delete() = DELETE no respon.
-    
-        */
-
-        return $resource('data/:filename', { 'filename': '' });
-
-            
+        function upload() {
+            Database.Barang().save(barang.data, function(res) {
+                console.log(res)
+            })
+        }
     }
 
     

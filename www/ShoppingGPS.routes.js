@@ -16,7 +16,7 @@
                 views: {
                     'tab-Menu': {
                         controller: 'MenuCtrl',
-                        controllerAs: 'Menu',
+                        controllerAs: 'menu',
                         templateUrl: 'Menu/templates/Menu.html'
                     }
                 }
@@ -35,6 +35,7 @@
                 views: {
                     'tab-MuatNaik': {
                         controller: 'MuatNaikCtrl',
+                        'controllerAs': 'barang',
                         templateUrl: 'MuatNaik/templates/MuatNaik.html'
                     }
                 }

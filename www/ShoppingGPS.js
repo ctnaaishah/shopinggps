@@ -2,13 +2,14 @@
     angular
         .module("ShoppingGPS", [
             "ionic",
-            "ngResource", // Untuk factory mendapatkan data.
+            "ngResource",
             "ShoppingGPS.Menu",
             "ShoppingGPS.Carian",
             "ShoppingGPS.MuatNaik"
         ])
         
-        .run(init);
+        .run(init)
+        .factory("Database", Database);
 
     
     function init($ionicPlatform) {
@@ -24,5 +25,19 @@
                 StatusBar.styleDefault();
             }
         });
+    }
+
+    function Database($resource) {
+        // var url = 'http://192.168.43.193/shoppinggpsserver';
+        var url = 'http://localhost/shoppinggpsserver';
+
+        return {
+            Users: function() {
+                return $resource(url + '/penjual')
+            },
+            Barang: function() {
+                return $resource(url + '/barang')
+            }
+        }
     }
 })();
