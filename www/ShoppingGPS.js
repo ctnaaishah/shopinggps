@@ -32,10 +32,13 @@
         var url = 'http://localhost/shoppinggpsserver';
 
         return {
-            Users: function() {
+            login: function() {
                 return $resource(url + '/penjual')
             },
-            Barang: function() {
+            penjual: function() {
+                return $resource(url + '/penjual')
+            },
+            barang: function() {
                 return $resource(url + '/barang')
             }
         }
