@@ -1,28 +1,28 @@
 <ion-view view-title="Daftar">
   <ion-content class="padding">
 
-    
+    <form ng-submit="penjual.upload()">
       <div class="list list-inset">
           <label class="item item-input">
-              <input type="text" placeholder="Id Penjual" ng-model="data.IdPenjual">
+              <input type="text" placeholder="Id Penjual" ng-model="penjual.data.IdPenjual">
           </label>
           <label class="item item-input">
-              <input type="password" placeholder="Katalaluan" ng-model="data.Katalaluan">
+              <input type="password" placeholder="Katalaluan" ng-model="penjual.data.Katalaluan">
           </label>
           <label class="item item-input">
-              <input type="text" placeholder="Email" ng-model="data.Email">
+              <input type="text" placeholder="Email" ng-model="penjual.data.Email">
           </label>
           <label class="item item-input">
-              <input type="text" placeholder="Nombor Telefon" ng-model="data.NomborTelefon">
+              <input type="text" placeholder="Nombor Telefon" ng-model="penjual.ata.NomborTelefon">
           </label>
           <label class="item item-input">
-              <input type="text" placeholder="Nama Kedai" ng-model="data.NamaKedai">
+              <input type="text" placeholder="Nama Kedai" ng-model="penual.data.NamaKedai">
           </label>
           <label class="item item-input">
-              <input type="text" placeholder="Alamat" ng-model="data.Alamat">
+              <input type="text" placeholder="Alamat" ng-model="penjual.data.Alamat">
           </label>
       </div>
-      <button class="button button-block button-calm" ng-click="daftar()">Daftar</button>
-    
+      <button class="button button-block button-calm">Daftar</button>
+    </form>
   </ion-content>
 </ion-view>

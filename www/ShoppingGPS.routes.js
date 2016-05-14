@@ -36,7 +36,7 @@
                     'tab-MuatNaik': {
                         controller: 'MuatNaikCtrl',
                         'controllerAs': 'barang',
-                        templateUrl: 'MuatNaik/templates/MuatNaik.html'
+                        templateUrl: 'MuatNaik/templates/LogMasuk.html'
                     }
                 }
             })
