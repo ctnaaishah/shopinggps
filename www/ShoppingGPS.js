@@ -10,6 +10,7 @@
         
         .run(init)
         .factory("Database", Database);
+        
 
     
     function init($ionicPlatform) {

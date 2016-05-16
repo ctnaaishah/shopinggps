@@ -41,6 +41,15 @@
                 }
             })
 
+            .state('tab.Daftar', {
+                url: '/Daftar',
+                views: {
+                    'tab-MuatNaik': {
+                    templateUrl: 'MuatNaik/templates/Daftar.html'
+                    }
+                }
+            })
+
             $urlRouterProvider.otherwise('tab/Menu');
     }
 })();
