@@ -34,18 +34,9 @@
                 url: '/MuatNaik',
                 views: {
                     'tab-MuatNaik': {
+                        templateUrl: 'MuatNaik/templates/MuatNaik.html',
                         controller: 'MuatNaikCtrl',
-                        'controllerAs': 'barang',
-                        templateUrl: 'MuatNaik/templates/LogMasuk.html'
-                    }
-                }
-            })
-
-            .state('tab.Daftar', {
-                url: '/Daftar',
-                views: {
-                    'tab-MuatNaik': {
-                    templateUrl: 'MuatNaik/templates/Daftar.html'
+                        controllerAs: 'barang',
                     }
                 }
             })

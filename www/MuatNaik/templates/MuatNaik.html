@@ -4,13 +4,13 @@
       <form ng-submit="barang.upload()">
         <div class="list list-inset">
             <label class="item item-input">
-                <input type="text" placeholder="Nama Barang" ng-model="barang.data.name">
+                <input type="text" placeholder="Nama Barang" ng-model="barang.data.namabarang" required>
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="(RM)" ng-model="barang.data.harga">
+                <input type="text" placeholder="(RM)" ng-model="barang.data.harga" required>
             </label>
             <label class="item item-input">
-                <input type="file" placeholder="Gambar" ng-model="barang.data.gambar">
+                <input type="file" placeholder="Gambar" ng-model="barang.data.gambar" required>
             </label>
             <div class="list">
 

@@ -30,13 +30,14 @@
 
     function Database($resource) {
          //var url = 'http://192.168.43.193/shoppinggpsserver';
-         var url = 'http://localhost/shoppinggpsserver';
+         var url = 'http://localhost/ShoppingGPSServer';
 
         return {
-    
+
             login: function() {
-                return $resource(url + '/penjual')
+                return $resource(url + '/login')
             },
+    
             penjual: function() {
                 return $resource(url + '/penjual')
             },

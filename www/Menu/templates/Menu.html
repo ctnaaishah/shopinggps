@@ -1,7 +1,16 @@
 <ion-view view-title="Menu">
   <ion-content class="padding">
-    <ul>
-        <li ng-repeat="b in menu.barang"></li>
-    </ul>
+    <ion-list>
+        <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+            <img ng-src="{{barang.gambar}}">
+            <h2>{{barang.namabarang}}</h2>
+            <h3>{{barang.harga}}</h3>
+            <h3>{{barang.kategori}}</h3>
+            <h3>{{penjual.namakedai}}</h3>
+            <h3>{{penjual.alamat}}</h3>
+            <h3>{{penjual.nombortelefon}}</h3>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
