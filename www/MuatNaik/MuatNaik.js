@@ -39,8 +39,12 @@
 
         function upload() {
             Database.barang().save(barang.data, function(res) {
-                console.log(res)
-            })
+                if (res.success) {
+                    alert(res.message)
+                } else {
+                    alert(res.message)
+                }
+            });
         }
 
         function daftar(){

@@ -6,8 +6,10 @@
         .controller('MenuCtrl', MenuCtrl)
 
     function MenuCtrl(Database) {
-        var vm = this;
-        vm.barang = Database.barang().query();
+        var menu = this;
+        menu.data = Database;
+        menu.barang = Database.barang().query(menu.data, function(res){
+        });
     }
     function MenuFactory() {
         return false;

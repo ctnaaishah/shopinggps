@@ -2,6 +2,7 @@
     angular
         .module('ShoppingGPS')
         .config(routesConfig)
+        .config(MapsRoutes)
 
     function routesConfig($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -26,7 +27,7 @@
                 views: {
                     'tab-Carian': {
                         controller: 'CarianCtrl',
-                        templateUrl: 'Carian/templates/Carian.html'
+                        templateUrl: 'Carian/templates/maps.html'
                     }
                 }
             })
@@ -42,5 +43,19 @@
             })
 
             $urlRouterProvider.otherwise('tab/Menu');
+    }
+
+    function MapsRoutes($stateProvider) {
+        $stateProvider
+            .state('maps', {
+                url: '/maps',
+                views: {
+                    'maps-tab': {
+                        templateUrl: 'Carian/templates/maps.html',
+                        controller: 'mapsCtrl',
+                        controllerAs: 'maps'
+                    }
+                }
+            })
     }
 })();
