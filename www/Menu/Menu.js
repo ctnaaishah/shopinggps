@@ -9,6 +9,7 @@
         var menu = this;
         menu.data = Database;
         menu.barang = Database.barang().query(menu.data, function(res){
+            console.log(res);
         });
     }
     function MenuFactory() {

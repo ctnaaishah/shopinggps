@@ -27,7 +27,7 @@
                 views: {
                     'tab-Carian': {
                         controller: 'CarianCtrl',
-                        templateUrl: 'Carian/templates/maps.html'
+                        templateUrl: 'Carian/templates/Carian.html'
                     }
                 }
             })

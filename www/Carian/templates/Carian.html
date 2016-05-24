@@ -6,10 +6,16 @@
     <i class="icon ion-ios-search placeholder-icon"></i>
     <input type="search" placeholder="carian" ng-model="filter">
   </label>
-  <button class="button button-clear">
-    Cari
-  </button>
 </div>
+<a style="display: block"
+            ui-sref="carian.data({ id: h.id })" class="list card"
+            ng-repeat="barang in carian.filter = (carian.items | filter: { name: carian.keyword })">
+            <img class="full-image" ng-src="{{ root.static + h.images[0].filename || 'http://placehold.it/200x100' }}">
+            <div class="item item-body" style="text-align: center">
+                <strong ng-bind="barang.namabarang"></strong><br>
+                <small ng-bind=""></small><br>
+            </div>
+        </a>
 
   </ion-content>
 </ion-view>
