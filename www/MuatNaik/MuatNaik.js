@@ -14,6 +14,7 @@
         barang.logmasuk     = logmasuk;
         barang.cancelLogin  = cancelLogin;
         barang.cancelDaftar = cancelDaftar;
+        barang.deleteakaun  = deleteakaun;
 
         $ionicModal.fromTemplateUrl('MuatNaik/templates/LogMasuk.html', {
             scope: $scope,
@@ -85,6 +86,24 @@
             $scope.modal_daftar.hide();
             $state.go('tab.MuatNaik');
         };
+
+        function deleteakaun($scope) {
+            $scope.showConfirm = function(){
+                var confirmPopup = $ionicPopup.confirm({
+                    title: 'Hapus Akaun',
+                    template: 'Adakah anda yakin untuk hapuskan akaun?'
+                });
+
+                confirmPopup.then(function(res){
+                    if (res.success) {
+                        alert(res.message)
+                    } else {
+                        alert(res.message)
+                    }
+                })
+            }
+            
+        }
 
     }
 })();

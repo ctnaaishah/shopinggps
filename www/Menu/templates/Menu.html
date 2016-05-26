@@ -1,13 +1,10 @@
 <ion-view view-title="Menu">
   <ion-content class="padding">
     <ion-list>
-        <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="barang in menu" type="item-text-wrap" href="#/tab/Menu/{{menu.maklumatkedai}}">
-            <img ng-src="{{menu.data.gambar}}">
-            <h2>{{menu.data.namabarang}}</h2>
-            <h3>{{menu.data.harga}}</h3>
-            <h3>{{menu.data.namakedai}}</h3>
-            <h3>{{menu.data.alamat}}</h3>
-            <h3>{{menu.data.nombortelefon}}</h3>
+        <ion-item class="item-thumbnail-left" ng-repeat="barang in menu" type="item-text-wrap" href="#/tab/Menu/{{menu.maklumatkedai}}">
+            <img ng-src="{{barang.data.gambar}}">
+            <h2>{{barang.namabarang}}</h2>
+            <h3>{{barang.harga}}</h3>
             <i class="icon ion-chevron-right icon-accessory"></i>
         </ion-item>
     </ion-list>
