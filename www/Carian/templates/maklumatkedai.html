@@ -1,21 +1,17 @@
-<style type="text/css">
-    .angular-google-map-container {
-        width: 100%;
-        height: 200px;
-    }
-</style>
-
-<ion-view view-title="Maklumat Kedai">
-    <ion-content class="padding">
-        <h3>{{ carian.data.namakedai }}</h3>
-        <p ng-bind="carian.data.email"></p>
-        <p ng-bind="carian.data.nombortelefon"></p>
-        <img ng-repeat="a in carian.data.gambar track by $index" ng-src="{{ root.static + a.filename }}" width="100%">
-        <div id="map-canvas">
-            <ui-gmap-google-map center="carian.map.center" zoom="carian.map.zoom">
-                <ui-gmap-marker coords="carian.marker.coords" options="carian.marker.options" idkey="carian.marker.id"></ui-gmap-marker>
-            </ui-gmap-google-map>
-        </div>
-        <small ng-bind="carian.data.alamat" style="display: block; margin-top: 20px;"></small>
-    </ion-content>
-</ion-view>
+<ion-modal-view>
+<ion-header-bar>
+    <h1 class="title">Maklumat Kedai</h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <ion-list>
+        <ion-item class="item" ng-repeat="barang in menu">
+            <h3>{{barang.harga}}</h3>
+            <h3>{{barang.nombortelefon}}</h3>
+            <h3>{{barang.alamat}}</h3>
+        </ion-item>
+    </ion-list>
+    <center>
+        <a class="button button-clear button-positive" ng-click="barang.cancelview()">Batal</a>
+    </center>
+  </ion-content>
+</ion-modal-view>

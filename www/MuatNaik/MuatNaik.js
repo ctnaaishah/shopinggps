@@ -12,9 +12,12 @@
         barang.upload       = upload;
         barang.daftar       = daftar;
         barang.logmasuk     = logmasuk;
+        barang.logkeluar    = logkeluar;
         barang.cancelLogin  = cancelLogin;
         barang.cancelDaftar = cancelDaftar;
-        barang.deleteakaun  = deleteakaun;
+        barang.cancelakaun  = cancelakaun;
+        //barang.deleteakaun  = deleteakaun;
+        barang.update       = update;
 
         $ionicModal.fromTemplateUrl('MuatNaik/templates/LogMasuk.html', {
             scope: $scope,
@@ -36,6 +39,13 @@
             $scope.modal_daftar = modal;
         });
 
+        $ionicModal.fromTemplateUrl('MuatNaik/templates/akaun.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        })
+        .then(function(modal) {
+            $scope.modal_akaun=modal;
+        });
 
 
         function upload() {
@@ -87,7 +97,32 @@
             $state.go('tab.MuatNaik');
         };
 
-        function deleteakaun($scope) {
+        function cancelakaun() {
+            $scope.modal_akaun.hide();
+            $state.go('tab.MuatNaik');
+        };
+
+        function update(){
+            $scope.modal_akaun.show();
+
+            Database.penjual().save(barang.data, function(res) {
+                if (res.success) {
+                    alert(res.message)
+                    $scope.modal_akaun.hide();                    
+                    $state.go('tab.MuatNaik');
+                } else {
+                    alert(res.message)
+                }
+            });
+        }
+
+        function logkeluar() {
+            sessionStorage.clear();
+            $ionicModal.fromTemplateUrl('Menu/templates/Menu.html')
+        }
+
+        /*function deleteakaun() {
+            Database.penjual().delete(barang.data)
             $scope.showConfirm = function(){
                 var confirmPopup = $ionicPopup.confirm({
                     title: 'Hapus Akaun',
@@ -103,7 +138,7 @@
                 })
             }
             
-        }
+        }*/
 
     }
 })();

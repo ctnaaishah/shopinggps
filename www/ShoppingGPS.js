@@ -34,9 +34,9 @@
 
         return {
 
-            akaun: function() {
+            /*akaun: function() {
                 return $resource(url + '/akaun')
-            },
+            },*/
 
             login: function() {
                 return $resource(url + '/login')
@@ -47,6 +47,7 @@
             },
             barang: function() {
                 return $resource(url + '/barang')
+                
             }
         }
     }

@@ -1,24 +1,7 @@
 
 <ion-view view-title="Lokasi Barang">
     <ion-content>
-        <style>
-            .scroll { height: 100%; }
-            html, body, #map-canvas {
-                position: relative;
-                height: 100%;
-                width: 100%;
-            }
-            #map-canvas .angular-google-map-container {
-                position: absolute;
-                top: 0; left: 0;
-                width: 100%;
-                height: 100%;
-            }
-        </style>
-        <div id="map-canvas">
-            <ui-gmap-google-map center="maps.map.center" zoom="maps.map.zoom">
-                <ui-gmap-marker coords="maps.marker.coords" options="maps.marker.options" idkey="nearby.marker.id"></ui-gmap-marker>
-            </ui-gmap-google-map>
-        </div>
+      <div id="map" data-tap-disabled="true"></div>
     </ion-content>
+
 </ion-view>

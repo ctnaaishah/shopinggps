@@ -6,30 +6,35 @@
 
     // ===============================
 
-    function mapsCtrl(uiGmapGoogleMapApi, $cordovaGeolocation) {
-        var vm = this
-        vm.markers = []
+    function mapsCtrl($scope, $state, $cordovaGeolocation){
+            
+var options = {timeout: 10000, enableHighAccuracy: true};
+ 
+  $cordovaGeolocation.getCurrentPosition(options).then(function(position){
+ 
+    var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+ 
+    var mapOptions = {
+      center: latLng,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+ 
+    $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+ 
+  }, function(error){
+    console.log("Could not get location");
+  });   
 
-        $cordovaGeolocation
-            .getCurrentPosition()
-            .then(currPos)
-
-        function currPos(r) {
-            console.log('test')
-            vm.marker = {
-                id: 0,
-                coords: {
-                    latitude: r.coords.latitude,
-                    longitude: r.coords.longitude,
-                },
-                options: { draggable: false }
-            }
-            uiGmapGoogleMapApi.then(function(maps) {
-                vm.map = {
-                    center: vm.marker.coords,
-                    zoom: 10
-                }
-            })
-        }
-    }
+  //Wait until the map is loaded
+google.maps.event.addListenerOnce($scope.map, 'idle', function(){
+ 
+  var marker = new google.maps.Marker({
+      map: $scope.map,
+      animation: google.maps.Animation.DROP,
+      position: latLng
+  });      
+ 
+});
+  }); 
 })();
