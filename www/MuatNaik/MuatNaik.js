@@ -118,8 +118,8 @@
 
         function logkeluar() {
             sessionStorage.clear();
-            $ionicModal.fromTemplateUrl('Menu/templates/Menu.html')
-        }
+            $state.go('tab.Menu');
+        };
 
         /*function deleteakaun() {
             Database.penjual().delete(barang.data)

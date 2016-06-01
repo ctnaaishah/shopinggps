@@ -6,7 +6,9 @@
 
         function Carian($resource) {
             return $resource(url + '/penjual'), {}
-            changeStatus: { method: 'PUT' }
-        });
+            changeStatus: { method: 'PUT' },
+            getAll: { method: 'GET', isArray: true },
+            getOne: { method: 'GET', isArray: false }
+        };
     
 })

@@ -13,7 +13,7 @@
 
 <ion-item class="item-divider">Senarai barang</ion-item>
 
-<ion-item ng-repeat="barang in carian" class="item-remove-animate item-icon-right">
+<ion-item ng-repeat="barang in carian" class="item-remove-animate item-icon-right" ng-click="menu.maklumatkedai()">
 <h2>{{barang.namabarang}}</h2>
 <p>Harga: RM{{barang.harga}}</p>
 <i class="icon ion-chevron-right icon-accessory"></i>
