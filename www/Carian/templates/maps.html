@@ -1,17 +1,18 @@
-
+<style>
+    .angular-google-map-container { height: 600px; }
+</style>
 <ion-view view-title="Lokasi Barang">
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD9YtIF8_DhiHtrmEanA4L7IAyF8njZSsE"></script>
     <ion-content>
       <body ng-controller="menu.navigasi()">
     <ion-header-bar class="bar-dark" >
-      <h1 class="title">Map</h1>
+      <h1 class="title">Peta</h1>
     </ion-header-bar>
     <ion-content>
-      <div id="map" data-tap-disabled="true"></div>
+      <ui-gmap-google-map MapTypeId="ROADMAP" center='{ latitude: 1.9100, longitude: 103.0556 }' zoom='13'>
+            <ui-gmap-marker idkey="0" coords="{ latitude: 1.8586, longitude: 103.0856 }"></ui-gmap-marker>
+            <ui-gmap-layer type="TransitLayer" show="show"></ui-gmap-layer>
+      </ui-gmap-google-map>
     </ion-content>
-    <ion-footer-bar class="bar-dark">
-      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>
-    </ion-footer-bar>
   </body>
     </ion-content>
 

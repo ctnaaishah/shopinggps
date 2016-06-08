@@ -3,6 +3,7 @@
         .module("ShoppingGPS", [
             "ionic",
             "ngResource",
+            "uiGmapgoogle-maps",
             "ShoppingGPS.Menu",
             "ShoppingGPS.Carian",
             "ShoppingGPS.MuatNaik"
@@ -29,8 +30,8 @@
     }
 
     function Database($resource) {
-         var url = 'http://192.168.43.193/shoppinggpsserver';
-         //var url = 'http://localhost/ShoppingGPSServer';
+         //var url = 'http://192.168.43.193/shoppinggpsserver';
+         var url = 'http://localhost/ShoppingGPSServer';
 
         return {
 

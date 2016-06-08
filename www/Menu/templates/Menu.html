@@ -1,9 +1,9 @@
 <ion-view view-title="Menu">
   <ion-content class="padding">
     <ion-list>
-        <ion-item class="item" ng-repeat="barang in menu" type="item-text-wrap" ng-click="menu.maklumatkedai()">
+        <ion-item class="item" ng-repeat="barang in menu.data" type="item-text-wrap" ng-click="menu.maklumatkedai()">
             <h2>{{barang.namabarang}}</h2>
-            <h3>{{barang.harga}}</h3>
+            <h3>RM {{barang.harga}}</h3>
             <h3>{{barang.nombortelefon}}</h3>
             <h3>{{barang.alamat}}</h3>
             <i class="icon ion-chevron-right icon-accessory"></i>

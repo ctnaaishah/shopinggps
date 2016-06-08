@@ -6,7 +6,7 @@
       <input type="text" placeholder="Carian" ng-model="carian.keyword">
     </label>
 
-    <button ng-click="search = ''" class="button ion-android-close input-button button-small" ng-show="search.length">Clear
+    <button ng-click="search = barang()" class="button ion-android-close input-button button-small" ng-show="search.length">Clear
     </button>
 </div>
 <ion-list>
@@ -14,8 +14,8 @@
 <ion-item class="item-divider">Senarai barang</ion-item>
 
 <ion-item ng-repeat="barang in carian" class="item-remove-animate item-icon-right" ng-click="menu.maklumatkedai()">
-<h2>{{barang.namabarang}}</h2>
-<p>Harga: RM{{barang.harga}}</p>
+<h2>{{barang.data.namabarang}}</h2>
+<p>Harga: RM{{barang.data.harga}}</p>
 <i class="icon ion-chevron-right icon-accessory"></i>
 <ion-option-button class="button-assertive" >
 </ion-option-button>

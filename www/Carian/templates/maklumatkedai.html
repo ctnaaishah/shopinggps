@@ -4,7 +4,7 @@
   </ion-header-bar>
   <ion-content class="padding">
     <ion-list>
-        <ion-item class="item">
+        <ion-item class="item" ng-repeat="barang in menu.data">
             <h3>Nama Barang:{{barang.namabarang}}</h3>
             <h3>Harga: RM{{barang.harga}}</h3>
             <h3>Nombor Telefon:{{barang.nombortelefon}}</h3>
